@@ -6,5 +6,5 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Get Name
-        run: echo ${{secrets.Name}}
+        run: echo ${{secrets.NAME}}
         #get environment screts
