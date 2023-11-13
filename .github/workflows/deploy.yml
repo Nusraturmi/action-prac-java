@@ -22,3 +22,18 @@ jobs:
       - name: Run
         run: cd src && java Main
         shell: bash   
+     - name: Send Email
+        uses: hilarion5/send-mail@v1
+        with:
+          smtp-server: ${{ secrets.SMTP_SERVER }} # smtp.gmail.com
+          smtp-port: ${{ secrets.SMTP_PORT }} # 465
+          smtp-secure: true
+          from-email: ${{ secrets.EMAIL_USER }}
+          to-email: fullstackltd@gmail.com
+          username: ${{ secrets.EMAIL_USER }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: Test Email
+          body: This is a test email sent from GitHub Actions.
+          html: |
+            <h1>This is a test email</h1>
+            <p>Test Paragraph</p>
